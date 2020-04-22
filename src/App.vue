@@ -24,7 +24,7 @@ export default {
   mounted(){
     fetch('https://rickandmortyapi.com/api/character/')
     .then(response => response.json())
-    .then(characters => characters = characters);
+    .then(characters => this.characters = characters.results);
 
 
     eventBus.$on('character-selected', (character) => {
